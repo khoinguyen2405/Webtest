@@ -248,5 +248,17 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+
+		<li class="active"><a href="index.html">Homepage</a></li>
+		<script>
+  // Tự động đánh dấu link đang active
+  const currentUrl = window.location.pathname.split("/").pop();
+  document.querySelectorAll("#menu ul li a").forEach(link => {
+    if (link.getAttribute("href") === currentUrl) {
+      link.parentElement.classList.add("active");
+    }
+  });
+</script>
+		
 	</body>
 </html>
