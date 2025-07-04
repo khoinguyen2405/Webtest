@@ -251,12 +251,15 @@
 
 		
 		<script>
-  // Tự động đánh dấu link đang active
-  const currentUrl = window.location.pathname.split("/").pop();
-  document.querySelectorAll("#menu ul li a").forEach(link => {
-    if (link.getAttribute("href") === currentUrl) {
-      link.parentElement.classList.add("active");
-    }
+  document.addEventListener("DOMContentLoaded", function () {
+    let currentUrl = window.location.pathname.split("/").pop();
+    if (currentUrl === "") currentUrl = "index.html"; // Mặc định nếu rỗng thì là index.html
+
+    document.querySelectorAll("#menu ul li a").forEach(link => {
+      if (link.getAttribute("href") === currentUrl) {
+        link.parentElement.classList.add("active");
+      }
+    });
   });
 </script>
 		
