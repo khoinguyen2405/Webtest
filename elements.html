@@ -539,5 +539,17 @@ print 'It took ' + i + ' iterations to sort the deck.';
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+		<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const currentPage = window.location.pathname.split("/").pop(); // Lấy tên file như "generic.html"
+    const menuLinks = document.querySelectorAll("#menu ul li a");
+
+    menuLinks.forEach(function (link) {
+        if (link.getAttribute("href") === currentPage) {
+            link.parentElement.classList.add("active");
+        }
+    });
+});
+</script>
 	</body>
 </html>
